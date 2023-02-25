@@ -1,0 +1,96 @@
+// Resets
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// MIXINS
+@mixin responsive ($min_width){
+  @media screen and (min-width: $min_width){
+    @content;
+  }
+}
+
+@mixin flex ($direction, $just, $align, $gap){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $just;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin font ($color,$size,$weight){
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+// STYLES
+
+.App{
+  font-family: 'Quicksand', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  @include flex(column, center, center, 0);
+
+  &-div{
+    // background-color: chartreuse;
+    max-width: 90%;
+    @include flex(column, center, center, 2.5em);
+  }
+  
+  &-h1{
+    // background-color:brown;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 6px 6px 3px rgba(0,0,0,0.4);
+    @include font(white, 2.5em, 700);
+    @include responsive(600px){
+      font-size: 3.5em;
+    }
+    @include responsive(1200px){
+      font-size: 5em;
+    }
+  }
+
+  &-p{
+    background-color: white;
+    padding: 2em;
+    text-align: center;
+    border-radius: 8px;
+    max-width: 35em;
+    box-shadow: 12px 12px 5px rgba(0,0,0,0.2);
+    @include font(gray, 1em, 500);
+    @include responsive(600px){
+      font-size: 1.2em;
+    }
+    @include responsive(1200px){
+      font-size: 1.5em;
+    }
+  }
+
+  &-btn{
+    background-color: hsla(0, 0%, 100%, 0.75);
+    border: 3px solid white;
+    @include font(gray, 1em, 700);
+    @include responsive(1200px){
+      font-size: 1.5em;
+    }
+  }
+
+  &-span{
+    background-color: hsla(0, 0%, 100%, 0.35);
+    padding: .5em;
+    position: absolute;
+    bottom: 1.5em;
+    border-radius: 8px;
+    @include font(gray, 1em, 700);
+    @include responsive(1200px){
+      font-size: 1.5em;
+    }
+  }
+}
