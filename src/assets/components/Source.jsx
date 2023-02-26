@@ -2,9 +2,9 @@ import React from 'react';
 
 const Source = ({text}) => {
   return (
-    <span className='App-span'>
+    <cite className='App-cite'>
       {text}
-    </span>
+    </cite>
   );
 };
 

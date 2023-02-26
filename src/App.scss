@@ -57,19 +57,36 @@
     }
   }
 
-  &-p{
+  &-blockquote{
     background-color: white;
     padding: 2em;
     text-align: center;
     border-radius: 8px;
     max-width: 35em;
     box-shadow: 12px 12px 5px rgba(0,0,0,0.2);
+    position: relative;
     @include font(gray, 1em, 500);
     @include responsive(600px){
       font-size: 1.2em;
     }
     @include responsive(1200px){
       font-size: 1.5em;
+    }
+
+    &::before{
+      content: " \“ ";
+      font-size: 12em;
+      position: absolute;
+      top: -.5em;
+      left: -.1em;
+    }
+
+    &::after{
+      content: " \” ";
+      font-size: 12em;
+      position: absolute;
+      right: -.1em;
+      bottom: -.98em;
     }
   }
 
@@ -82,7 +99,7 @@
     }
   }
 
-  &-span{
+  &-cite{
     background-color: hsla(0, 0%, 100%, 0.35);
     padding: .5em;
     position: absolute;

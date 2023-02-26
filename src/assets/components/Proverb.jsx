@@ -2,9 +2,9 @@ import React from 'react';
 
 const Proverb = ({text}) => {
   return (
-    <p className='App-p'>
+    <blockquote className='App-blockquote'>
       {text}
-    </p>
+    </blockquote>
   );
 };
 
