@@ -34,9 +34,20 @@
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: right 0 bottom 20%;
+  background-position: right 45% bottom 20%;
   position: relative;
+  transition: .8s;
   @include flex(column, center, center, 0);
+  @include responsive(1400px){
+    @include flex(column, start, center, 0);
+    padding-top: 10em;
+  }
+  @include responsive(2000px){
+    @include flex(column, start, center, 0);
+    padding-top: 15em;
+  }
+
+  
 
   &-div{
     max-width: 90%;
@@ -71,6 +82,7 @@
     @include responsive(1200px){
       font-size: 1.5em;
     }
+  
 
     &::before{
       content: " \“ ";

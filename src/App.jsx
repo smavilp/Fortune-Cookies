@@ -17,8 +17,8 @@ function App() {
   } 
 
   const changeIndex = () =>{
-    changeBackground()
     changeProverb()
+    changeBackground()
   }
 
   return (
